@@ -81,7 +81,8 @@ function App() {
       botAvatar="doctor.ai_trans.png"
       userAvatar="user.png"
       recognitionEnable={true}
-      width="750px"
+      width="1200px"
+      height="1200px"
       speechSynthesis={{ enable: false, lang: "en" }}
     />
   );
@@ -159,6 +160,7 @@ function App() {
       ) : (
         chatbot
       )}
+      
       <div ref={alanBtnContainer}></div>
     </div>
   );

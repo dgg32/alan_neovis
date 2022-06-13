@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { useEffect, useState } from "react";
 import NeoVis from "neovis.js/dist/neovis.js";
+
 import { v1 as uuid } from "uuid";
 // import { NeoVis } from "../../public/neovis";
 
@@ -124,6 +125,7 @@ export class NeoVisComponent extends Component {
     });
     var viz = self.draw();
     viz.render(search);
+    this.triggetNext();
   }
 
   draw() {
@@ -147,19 +149,51 @@ export class NeoVisComponent extends Component {
       //   },
       // },
       labels: {
-        [NeoVis.NEOVIS_DEFAULT_CONFIG]: {
+        Compound: {
+          "caption": "name",                             
+        },
+        Disease: {
           "caption": "name",
-          //"size": "defaultPagerank",
-          //"community": "defaultCommunity"
-          //"sizeCypher": "defaultSizeCypher"
-                             
-        }
+          //"sizeCypher": "defaultSizeCypher"               
+        },
+        Pathogen: {
+          "caption": "name",
+          //"sizeCypher": "defaultSizeCypher"               
+        },
+        Gene: {
+          "caption": "name",
+          //"sizeCypher": "defaultSizeCypher"               
+        },
+        Anatomy: {
+          "caption": "name",
+          //"sizeCypher": "defaultSizeCypher"               
+        },
+        "Biological Process": {
+          "caption": "name",
+          //"sizeCypher": "defaultSizeCypher"               
+        },
+        "Cellular Component": {
+          "caption": "name",
+        },
+        "Molecular Function": {
+          "caption": "name",
+        },
+        "Pathway": {
+          "caption": "name",
+        },
+        "Side Effect": {
+          "caption": "name",
+        },
+        "Symptom": {
+          "caption": "name",
+        },
+        "Pharmacologic Class": {
+          "caption": "name",
+        },
+
       },
       relationships: {
-        [NeoVis.NEOVIS_DEFAULT_CONFIG]: {
-          //"thickness": "defaultThicknessProperty",
-          "caption": true
-        }  
+        
       },
       // initial_cypher: "MATCH (p:Pathogen) return p limit 10",
       //
@@ -177,16 +211,16 @@ export class NeoVisComponent extends Component {
       // 这里可以调大小吗？
       <div
         style={{
-          width: "300px",
-          height: "200px",
+          width: "1000px",
+          height: "600px",
           backgroundColor: "#eeeeee",
         }}
       >
         <div
           id={id}
           style={{
-            width: "200px",
-            height: "100px",
+            width: "1000px",
+            height: "600px",
           }}
         ></div>
         {!loading && (
@@ -194,14 +228,15 @@ export class NeoVisComponent extends Component {
             style={{
               textAlign: "center",
               marginTop: 60,
-              width: "300px",
-              height: "100px",
+              width: "1000px",
+              height: "600px",
             }}
           >
             
-            {!trigger && (
+            {/* {!trigger && (
               <button onClick={() => this.triggetNext()}>Search Again</button> //这里可以去掉这个按钮吗？
-            )}
+            )} */}
+
           </div>
         )}
       </div>
