@@ -147,17 +147,19 @@ export class NeoVisComponent extends Component {
       //   },
       // },
       labels: {
-        Troll: {
-          caption: "user_key",
-          size: "pagerank",
-          community: "community",
-        },
+        [NeoVis.NEOVIS_DEFAULT_CONFIG]: {
+          "caption": "name",
+          //"size": "defaultPagerank",
+          //"community": "defaultCommunity"
+          //"sizeCypher": "defaultSizeCypher"
+                             
+        }
       },
       relationships: {
-        RETWEETS: {
-          caption: false,
-          thickness: "count",
-        },
+        [NeoVis.NEOVIS_DEFAULT_CONFIG]: {
+          //"thickness": "defaultThicknessProperty",
+          "caption": true
+        }  
       },
       // initial_cypher: "MATCH (p:Pathogen) return p limit 10",
       //
@@ -171,6 +173,8 @@ export class NeoVisComponent extends Component {
     console.log("render.....");
     const { trigger, loading, id } = this.state;
     return (
+
+      // 这里可以调大小吗？
       <div
         style={{
           width: "300px",
@@ -194,8 +198,9 @@ export class NeoVisComponent extends Component {
               height: "100px",
             }}
           >
+            
             {!trigger && (
-              <button onClick={() => this.triggetNext()}>Search Again</button>
+              <button onClick={() => this.triggetNext()}>Search Again</button> //这里可以去掉这个按钮吗？
             )}
           </div>
         )}
