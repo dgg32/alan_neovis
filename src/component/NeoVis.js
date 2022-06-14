@@ -117,6 +117,7 @@ export class NeoVisComponent extends Component {
   componentDidMount() {
     console.log("componentDidMount.....");
     const { steps } = this.props;
+    console.log("props:", this.props);
     const search = steps.search.value;
     const self = this;
     this.setState({
@@ -150,51 +151,48 @@ export class NeoVisComponent extends Component {
       // },
       labels: {
         Compound: {
-          "caption": "name",                             
+          caption: "name",
         },
         Disease: {
-          "caption": "name",
-          //"sizeCypher": "defaultSizeCypher"               
+          caption: "name",
+          //"sizeCypher": "defaultSizeCypher"
         },
         Pathogen: {
-          "caption": "name",
-          //"sizeCypher": "defaultSizeCypher"               
+          caption: "name",
+          //"sizeCypher": "defaultSizeCypher"
         },
         Gene: {
-          "caption": "name",
-          //"sizeCypher": "defaultSizeCypher"               
+          caption: "name",
+          //"sizeCypher": "defaultSizeCypher"
         },
         Anatomy: {
-          "caption": "name",
-          //"sizeCypher": "defaultSizeCypher"               
+          caption: "name",
+          //"sizeCypher": "defaultSizeCypher"
         },
         "Biological Process": {
-          "caption": "name",
-          //"sizeCypher": "defaultSizeCypher"               
+          caption: "name",
+          //"sizeCypher": "defaultSizeCypher"
         },
         "Cellular Component": {
-          "caption": "name",
+          caption: "name",
         },
         "Molecular Function": {
-          "caption": "name",
+          caption: "name",
         },
-        "Pathway": {
-          "caption": "name",
+        Pathway: {
+          caption: "name",
         },
         "Side Effect": {
-          "caption": "name",
+          caption: "name",
         },
-        "Symptom": {
-          "caption": "name",
+        Symptom: {
+          caption: "name",
         },
         "Pharmacologic Class": {
-          "caption": "name",
+          caption: "name",
         },
-
       },
-      relationships: {
-        
-      },
+      relationships: {},
       // initial_cypher: "MATCH (p:Pathogen) return p limit 10",
       //
       // MATCH (n:Gene) RETURN n LIMIT 25
@@ -207,7 +205,6 @@ export class NeoVisComponent extends Component {
     console.log("render.....");
     const { trigger, loading, id } = this.state;
     return (
-
       // 这里可以调大小吗？
       <div
         style={{
@@ -232,11 +229,9 @@ export class NeoVisComponent extends Component {
               height: "600px",
             }}
           >
-            
             {/* {!trigger && (
               <button onClick={() => this.triggetNext()}>Search Again</button> //这里可以去掉这个按钮吗？
             )} */}
-
           </div>
         )}
       </div>

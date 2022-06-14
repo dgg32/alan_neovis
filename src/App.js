@@ -90,64 +90,17 @@ function App() {
   useEffect(() => {
     alanBtn({
       key:
-        "b70771382475d1df0fca2b0c9257c0252e956eca572e1d8b807a3e2338fdd0dc/stage",
-      //rootEl: alanBtnContainer.current,
+        "eca4f2336bb5d49d0fca2b0c9257c0252e956eca572e1d8b807a3e2338fdd0dc/prod",
+      rootEl: alanBtnContainer.current,
       onCommand: (commandData) => {
-        //console.log("commandData", commandData);
-        // if (commandData.command === 'command-example') {
-        //   if (logoEl.current) {
-        //       logoEl.current.style.transform = 'rotate(180deg)';
-        //   }
-        // }
-      },
-      onEvent: function(e) {
-        switch (e.name) {
-          case "recognized":
-            console.info("Interim results:", e.text);
-            break;
-          case "parsed":
-            console.info("Final result:", e.text);
-
-            // console.log("here steps", steps)
-
-            // let input_Alan = e.text;
-
-            // let newSteps = [...myStep];
-            // newSteps[1]["message"] = input_Alan
-            // setMyStep (newSteps)
-            /*
-            localStorage.setItem("alan", e.text)
-            //console.log("ReactDOM.findDOMNode('#rsc-input')", ReactDOM.findDOMNode("#rsc-input"))
-
-            const input_field = document.getElementsByClassName("rsc-input")[0];            
-            console.log("1", input_field)
-            input_field.value = e.text;
-            console.log("2", input_field)
-            var event = new KeyboardEvent("keydown", {
-              bubbles : true,
-              cancelable : true,
-              char : "Q",
-              key : "q",
-              shiftKey : true,
-              keyCode : 81
-          });
-          //chatbot.userInputRef.current.dispatchEvent(event);
-          //chatbot.placeholder = "Type your question here...";
-            //input_field.dispatchEvent(event);
-            console.log("3", input_field)
-*/
-            // chatbotObject.onRecognitionChange(e.text);
-            console.log("Alan....");
-            console.log(e);
-            console.log("spreak some:", e.text);
-            // this.viz.renderWithCypher(e.text);
-            break;
-          case "text":
-            console.info("Alan reponse:", e.text);
-
-            break;
-          default:
-            console.info("Unknown event");
+        console.log(
+          "----------------------------------------------------",
+          "commandData",
+          commandData
+        );
+        if (commandData.command === "neo4j-query") {
+          chatbotObject.onRecognitionChange(commandData.data);
+          chatbotObject.onRecognitionEnd();
         }
       },
     });
@@ -160,7 +113,7 @@ function App() {
       ) : (
         chatbot
       )}
-      
+
       <div ref={alanBtnContainer}></div>
     </div>
   );
