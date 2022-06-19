@@ -25,11 +25,8 @@ You need to add the https://[EC_public_ip]:7687 as exception in your browser. Ot
 ## Authors
 
 - **Sixing Huang**
-- **Maruthi Prithivirajan**
+- **Liang Li**
 
 ## Supported by
 
-- **Derek Ding**
-- **Emil Pastor**
-- **Irwan Butar Butar**
-- **Shiny Zhu**
+- **Maruthi Prithivirajan**

@@ -1,26 +1,14 @@
-/*
-import React, { useEffect, useRef } from "react";
-import { NeoVisComponent } from "./component/NeoVis";
-function App() {
-  return (
-    <div className="App" style={{ display: "flex", justifyContent: "center" }}>
-      <NeoVisComponent />
-    </div>
-  );
-}
-export default App;
-*/
-
 import "./App.css";
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
-// import DoctorAI from "./component/DoctorAI_gpt3";
 import React, { useEffect, useRef } from "react";
 import "./Alan.css";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import { NeoVisComponent } from "./component/NeoVis";
 
 const ENABLE_THEME = true;
+
+const alan_api = process.env.REACT_APP_ALAN_API;
 
 const theme_red = {
   background: "#f5f8fb",
@@ -48,13 +36,7 @@ const steps = [
     placeholder: "Type your question here...",
     trigger: "bot-response",
   },
-  // {
-  //   id: "bot-response",
-  //   // component: <DoctorAI />,
-  //   waitAction: true,
-  //   asMessage: true,
-  //   trigger: "user",
-  // },
+
   {
     id: "bot-response",
     component: <NeoVisComponent />,
@@ -72,7 +54,6 @@ const steps = [
 function App() {
   const alanBtnContainer = useRef();
   var chatbotObject = null;
-  var viz = {};
   let chatbot = (
     <ChatBot
       steps={steps}
@@ -89,8 +70,7 @@ function App() {
 
   useEffect(() => {
     alanBtn({
-      key:
-        "eca4f2336bb5d49d0fca2b0c9257c0252e956eca572e1d8b807a3e2338fdd0dc/prod",
+      key: alan_api,
       rootEl: alanBtnContainer.current,
       onCommand: (commandData) => {
         console.log(
