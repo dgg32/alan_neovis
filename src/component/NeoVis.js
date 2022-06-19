@@ -45,7 +45,7 @@ export class NeoVisComponent extends Component {
       server_url: process.env.REACT_APP_NEO4JURI,
       server_user: process.env.REACT_APP_NEO4JUSER,
       server_password: process.env.REACT_APP_NEO4JPASSWORD,
-
+      encrypted: "ENCRYPTION_ON",
       labels: {
         Compound: {
           caption: "name",
