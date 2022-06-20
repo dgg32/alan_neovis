@@ -16,7 +16,7 @@ In App.js, you need to set the Alan key in line 11. And in component/NeoVis.js, 
 
 ## To try this on the cloud
 
-Please refer to our [article in Medium]([https://medium.com/p/1396d1cd6fa5](https://dgg32.medium.com/doctor-ai-with-alan-and-neovis-js-aa4ac0d94ba)).
+Please refer to our [article in Medium](https://dgg32.medium.com/doctor-ai-with-alan-and-neovis-js-aa4ac0d94ba).
 
 ## On the client side
 
