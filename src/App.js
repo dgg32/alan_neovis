@@ -19,6 +19,7 @@ import React, { useEffect, useRef } from "react";
 import "./Alan.css";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import { NeoVisComponent } from "./component/NeoVis";
+import {MessageClassify} from "./component/MessageClassify";
 
 const ENABLE_THEME = true;
 
@@ -57,7 +58,7 @@ const steps = [
   // },
   {
     id: "bot-response",
-    component: <NeoVisComponent />,
+    component:<MessageClassify/>,
     waitAction: true,
     asMessage: true,
     trigger: "search",
